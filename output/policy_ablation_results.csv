@@ -1,0 +1,7 @@
+fold,model,RMSE_base,MAPE_base,BiasPct_base,RMSE_policy,MAPE_policy,BiasPct_policy,dRMSE,dRMSE_%
+A: policy-blind (orig cutoff),Linear Regression,107094.69,16.37,3.38,112817.54,17.08,5.17,5722.85,5.34
+A: policy-blind (orig cutoff),Random Forest,116235.56,18.09,11.71,115403.44,18.0,11.26,-832.12,-0.72
+A: policy-blind (orig cutoff),XGBoost,112163.64,17.16,10.79,109755.29,16.59,9.43,-2408.35,-2.15
+B: policy-aware (train thru Jun-2025),Linear Regression,102252.58,17.12,-0.27,97805.81,16.7,-4.01,-4446.77,-4.35
+B: policy-aware (train thru Jun-2025),Random Forest,96619.53,14.62,7.22,92845.28,13.9,5.69,-3774.25,-3.91
+B: policy-aware (train thru Jun-2025),XGBoost,90100.87,13.41,5.07,92421.58,13.79,4.73,2320.71,2.58

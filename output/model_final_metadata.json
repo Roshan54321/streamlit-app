@@ -1,0 +1,55 @@
+{
+  "model_name": "XGBoost",
+  "feature_set": "baseline",
+  "numeric_cols": [
+    "beds",
+    "baths",
+    "cars",
+    "land_area_m2",
+    "distance_from_cbd_km",
+    "latitude",
+    "longitude",
+    "erp_population",
+    "sale_year",
+    "sale_month",
+    "cash_rate_target",
+    "cash_rate_change_12m",
+    "total_gross_income",
+    "secondary_income_receivable_current_transfers_to_non_profit_institutions",
+    "total_property_income_payable",
+    "property_income_payable_interest_consumer_debt",
+    "property_income_payable_unincorporated_enterprises",
+    "cpi_index",
+    "cpi_annual_change_pct",
+    "suburb_target_enc",
+    "city_price_momentum_3m",
+    "city_price_momentum_6m",
+    "city_price_momentum_12m",
+    "suburb_price_momentum_6m"
+  ],
+  "categorical_cols": [
+    "suburb",
+    "property_type_from_address",
+    "cash_rate_direction"
+  ],
+  "target": "price_numeric",
+  "trained_through": "2025-12-31",
+  "hyperparameters": {
+    "subsample": 1.0,
+    "reg_lambda": 5,
+    "reg_alpha": 0,
+    "n_estimators": 400,
+    "min_child_weight": 5,
+    "max_depth": 8,
+    "learning_rate": 0.1,
+    "gamma": 0,
+    "colsample_bytree": 0.85
+  },
+  "policy_events": {
+    "hlpe_stamp_duty": "2022-07-01",
+    "homegrown_grant": "2024-10-01",
+    "fed_5pct_no_caps": "2025-10-01"
+  },
+  "pooled_backtest_rmse": 79109.44,
+  "pooled_backtest_mape": 11.83
+}

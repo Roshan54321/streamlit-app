@@ -1,0 +1,13 @@
+step,Model,RMSE,MAE,R2,MAPE
+1 baseline (v1),Linear Regression,133538.39,105598.65,0.4223,20.23
+1 baseline (v1),Random Forest,117095.23,91862.25,0.5558,17.82
+1 baseline (v1),XGBoost,126630.73,101709.64,0.4805,19.41
+2 + price momentum,Linear Regression,119520.81,92529.39,0.5372,18.28
+2 + price momentum,Random Forest,116435.56,90858.47,0.5608,17.59
+2 + price momentum,XGBoost,120324.17,96717.41,0.531,18.65
+3 + rate direction,Linear Regression,114052.82,87117.79,0.5786,17.52
+3 + rate direction,Random Forest,118682.08,93075.89,0.5437,17.93
+3 + rate direction,XGBoost,119588.98,95999.62,0.5367,18.51
+4 + recency weights,Linear Regression,107094.69,78992.5,0.6284,16.37
+4 + recency weights,Random Forest,122786.57,96893.86,0.5116,18.5
+4 + recency weights,XGBoost,112451.74,88999.97,0.5903,17.31

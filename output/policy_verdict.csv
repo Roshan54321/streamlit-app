@@ -1,0 +1,7 @@
+split,model,mean_dRMSE,CI95_low,CI95_high,verdict,avg_policy_uplift_%
+A: policy-blind (orig cutoff),Linear Regression,5729.116,5092.182,6339.174,harmful,-3.59
+A: policy-blind (orig cutoff),Random Forest,-829.549,-1365.607,-301.856,supported,0.76
+A: policy-blind (orig cutoff),XGBoost,-2413.268,-3391.012,-1487.036,supported,1.96
+B: policy-aware (train thru Jun-2025),Linear Regression,-4457.172,-6186.165,-2684.283,supported,10.15
+B: policy-aware (train thru Jun-2025),Random Forest,-3769.594,-4640.154,-2872.632,supported,6.95
+B: policy-aware (train thru Jun-2025),XGBoost,2326.872,835.022,3876.848,harmful,9.3
