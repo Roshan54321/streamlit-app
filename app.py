@@ -55,7 +55,7 @@ st.title("🏠 Greater Darwin Property-Price Forecasting")
 st.caption("PRT661 Data Science Practice | Group Dan1-Theme2 | Theme 2 - Predictive Analytics and Forecasting")
 if missing:
     st.error(f"Missing in `../data/output/`: {', '.join(missing)}. Run the notebook through Section 15, "
-             "then the Section 16 export cell, and restart the app.")
+             "then the Section 15.1 export cell, and restart the app.")
     st.stop()
 
 MODEL = meta.get("model_name", "XGBoost")
@@ -187,14 +187,42 @@ with tab_pred:
     rate = ctx["cash_rate_target"] + margin
     monthly = repay(price, rate)
     share = monthly * 12 / income * 100
-    k = st.columns(3)
-    k[0].metric("Loan amount", f"${price * (1 - dep / 100):,.0f}")
-    k[1].metric(f"Monthly repayment @ {rate:.2f}%", f"${monthly:,.0f}")
-    k[2].metric("Repayment / income", f"{share:.0f}%", "above 30% = stress" if share > 30 else "within 30% guide",
+    k = st.columns(5)
+    k[0].metric("Deposit", f"${price * dep / 100:,.0f}")
+    k[1].metric("Loan amount", f"${price * (1 - dep / 100):,.0f}")
+    k[2].metric(f"Monthly @ {rate:.2f}%", f"${monthly:,.0f}")
+    k[3].metric("Weekly", f"${monthly * 12 / 52:,.0f}")
+    k[4].metric("Repayment / income", f"{share:.0f}%", "above 30% = stress" if share > 30 else "within 30% guide",
                 delta_color="inverse")
     sens = pd.DataFrame({"Rate": [f"{rate + d:.2f}%" for d in (-1, 0, 1, 2)],
-                         "Monthly": [round(repay(price, rate + d)) for d in (-1, 0, 1, 2)]})
+                         "Monthly": [round(repay(price, rate + d)) for d in (-1, 0, 1, 2)],
+                         "Repayment / income %": [round(repay(price, rate + d) * 12 / income * 100, 1) for d in (-1, 0, 1, 2)]})
     st.dataframe(sens, use_container_width=True, hide_index=True)
+
+    st.markdown("#### Suburb comparison (same property, same finances, every suburb)")
+    comp_names = [n for n in names if sub[n]["n_sales"] >= 10]
+    crow = []
+    for n in comp_names:
+        t = sub[n]
+        crow.append({**ctx, "beds": beds, "baths": baths, "cars": cars, "land_area_m2": land,
+                     "distance_from_cbd_km": t["distance_from_cbd_km"], "latitude": t["latitude"],
+                     "longitude": t["longitude"], "suburb_target_enc": t["suburb_target_enc"],
+                     "suburb_price_momentum_6m": t["suburb_price_momentum_6m"],
+                     "suburb": t["model_suburb"], "property_type_from_address": ptype,
+                     "cash_rate_direction": ctx["cash_rate_direction"]})
+    cdf = pd.DataFrame(crow)[meta["numeric_cols"] + meta["categorical_cols"]]
+    comp = pd.DataFrame({"Suburb": comp_names, "Estimated price": bundle["pipeline"].predict(cdf)})
+    comp["Monthly repayment"] = comp["Estimated price"].apply(lambda p_: repay(p_, rate))
+    comp["Repayment / income %"] = comp["Monthly repayment"] * 12 / income * 100
+    comp = comp.sort_values("Estimated price").reset_index(drop=True)
+    comp["Status"] = np.where(comp["Repayment / income %"] > 30, "Above 30%", "Within 30%")
+    st.plotly_chart(px.bar(comp, x="Suburb", y="Repayment / income %", color="Status",
+                           color_discrete_map={"Within 30%": "#2E6FBA", "Above 30%": "#E07A2F"},
+                           title="Repayment-to-income by suburb (cheapest to dearest)"), use_container_width=True)
+    st.dataframe(comp.drop(columns="Status").style.format(
+        {"Estimated price": "${:,.0f}", "Monthly repayment": "${:,.0f}", "Repayment / income %": "{:.0f}"}),
+        use_container_width=True, hide_index=True)
+    st.caption("Suburbs with fewer than 10 historical sales are left out of the comparison.")
     st.caption("Illustrative only: cash rate is the latest training value; margin, deposit and income are your inputs.")
 
 # ---------------------------------------------------------------- Limitations
