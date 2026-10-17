@@ -1,0 +1,7 @@
+Model,RMSE,MAE,R2,MAPE,Skill vs this row
+XGBoost (selected),79122.65,57114.42,0.7993,11.92,
+Rule: last-quarter city median,175198.54,142309.72,0.0159,33.41,0.548
+"Rule: suburb median, last 12 months",159963.65,120994.16,0.1796,27.93,0.505
+Linear Regression (baseline features),115140.01,80610.9,0.575,17.11,0.313
+Ridge (baseline features),106364.87,75843.03,0.6373,15.45,0.256
+Hedonic median (suburb x beds x type),128340.58,91534.51,0.4719,19.93,0.383

@@ -1,0 +1,8 @@
+variant,RMSE,MAPE,R2,RMSE change vs all features,change %
+all features,79122.65,11.92,0.7993,0.0,0.0
+"without interest rate (level, change, direction)",79567.26,11.91,0.797,445.0,0.56
+without inflation (CPI),79875.41,11.97,0.7954,753.0,0.95
+without income (NT),78838.13,11.95,0.8007,-285.0,-0.36
+without population (ERP),79218.85,11.92,0.7988,96.0,0.12
+without price momentum,78934.44,11.93,0.8002,-188.0,-0.24
+without sale year and month,80188.04,12.05,0.7938,1065.0,1.35

@@ -1,7 +1,7 @@
 model,feature_set,RMSE,MAE,R2,MAPE
-XGBoost,baseline,79109.44,56843.39,0.7965,11.83
-XGBoost,+policy,79569.06,57063.81,0.7941,11.87
-Random Forest,+policy,80818.92,58275.41,0.7876,12.04
-Random Forest,baseline,81767.36,59205.14,0.7826,12.15
-Linear Regression,+policy,111534.64,79176.04,0.5955,17.04
-Linear Regression,baseline,112186.22,79184.27,0.5908,17.06
+XGBoost,+policy,79122.65,57114.42,0.7993,11.92
+XGBoost,baseline,79262.76,57328.22,0.7986,11.97
+Random Forest,+policy,86350.18,61289.84,0.7609,12.69
+Random Forest,baseline,87265.05,62258.28,0.7558,12.82
+Linear Regression,+policy,113807.71,79819.05,0.5847,16.99
+Linear Regression,baseline,115140.01,80610.9,0.575,17.11

@@ -1,0 +1,7 @@
+model,feature_set,RMSE_selection_folds,RMSE_confirmation_folds,rank_on_selection,rank_on_confirmation
+XGBoost,+policy,76927.97,82235.36,1,1
+XGBoost,baseline,76974.38,82504.02,2,2
+Random Forest,+policy,82641.92,91517.11,3,3
+Random Forest,baseline,82692.39,93567.71,4,4
+Linear Regression,+policy,122223.43,100195.37,5,5
+Linear Regression,baseline,123654.81,101367.34,6,6

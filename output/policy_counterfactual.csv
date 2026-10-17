@@ -1,7 +1,7 @@
 split,model,avg_policy_uplift_%
-A: policy-blind (orig cutoff),Linear Regression,-3.59
-A: policy-blind (orig cutoff),Random Forest,0.76
-A: policy-blind (orig cutoff),XGBoost,1.96
-B: policy-aware (train thru Jun-2025),Linear Regression,10.15
-B: policy-aware (train thru Jun-2025),Random Forest,6.95
-B: policy-aware (train thru Jun-2025),XGBoost,9.3
+A: policy-blind (orig cutoff),Linear Regression,18.76
+A: policy-blind (orig cutoff),Random Forest,0.35
+A: policy-blind (orig cutoff),XGBoost,4.51
+B: policy-aware (train thru Jun-2025),Linear Regression,4.57
+B: policy-aware (train thru Jun-2025),Random Forest,3.86
+B: policy-aware (train thru Jun-2025),XGBoost,4.83

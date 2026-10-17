@@ -1,0 +1,5 @@
+Model,RMSE,MAE,R2,MAPE,Skill vs best rule,Skill vs Linear Regression
+XGBoost (selected),79122.65,57114.42,0.7993,11.92,0.505,0.313
+Rule: last-quarter city median,175198.54,142309.72,0.0159,33.41,-0.095,-0.522
+"Rule: suburb median, last 12 months",159963.65,120994.16,0.1796,27.93,0.0,-0.389
+Linear Regression (baseline features),115140.01,80610.9,0.575,17.11,0.28,0.0

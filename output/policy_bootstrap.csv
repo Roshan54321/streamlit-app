@@ -1,7 +1,7 @@
 split,model,mean_dRMSE,CI95_low,CI95_high,P(policy better),verdict
-A: policy-blind (orig cutoff),Linear Regression,5729.116,5092.182,6339.174,0.0,harmful
-A: policy-blind (orig cutoff),Random Forest,-829.549,-1365.607,-301.856,1.0,supported
-A: policy-blind (orig cutoff),XGBoost,-2413.268,-3391.012,-1487.036,1.0,supported
-B: policy-aware (train thru Jun-2025),Linear Regression,-4457.172,-6186.165,-2684.283,1.0,supported
-B: policy-aware (train thru Jun-2025),Random Forest,-3769.594,-4640.154,-2872.632,1.0,supported
-B: policy-aware (train thru Jun-2025),XGBoost,2326.872,835.022,3876.848,0.0,harmful
+A: policy-blind (orig cutoff),Linear Regression,59752.684,54036.992,65755.104,0.0,harmful
+A: policy-blind (orig cutoff),Random Forest,-1468.804,-1984.864,-937.653,1.0,supported
+A: policy-blind (orig cutoff),XGBoost,-8494.853,-9712.301,-7225.17,1.0,supported
+B: policy-aware (train thru Jun-2025),Linear Regression,-6320.902,-7499.262,-5149.904,1.0,supported
+B: policy-aware (train thru Jun-2025),Random Forest,-2303.112,-3029.357,-1566.485,1.0,supported
+B: policy-aware (train thru Jun-2025),XGBoost,-5072.486,-6919.363,-3360.11,1.0,supported

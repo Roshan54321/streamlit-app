@@ -1,0 +1,10 @@
+regime_type,regime,n,folds,RMSE,MAPE,BiasPct,coverage_pct,thin,kind,price shock,range coverage %,MAPE %
+rate direction,cutting,1343.0,4.0,82987.0,12.7,2.7,83.7,False,regime,,,
+rate direction,flat,354.0,2.0,72998.0,11.8,3.0,85.6,False,regime,,,
+rate direction,hiking,1988.0,8.0,77480.0,11.4,0.6,82.5,False,regime,,,
+price momentum,falling (6m momentum < 0),1924.0,8.0,76632.0,11.1,1.2,83.9,False,regime,,,
+price momentum,flat or rising,1761.0,7.0,81757.0,12.8,2.1,83.0,False,regime,,,
+,,,,,,,,,shock,+0%,80.0,11.9
+,,,,,,,,,shock,-5%,77.3,12.1
+,,,,,,,,,shock,-10%,68.0,14.2
+,,,,,,,,,shock,-20%,32.9,24.2

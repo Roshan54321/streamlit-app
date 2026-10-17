@@ -1,6 +1,6 @@
 {
   "model_name": "XGBoost",
-  "feature_set": "baseline",
+  "feature_set": "+policy",
   "numeric_cols": [
     "beds",
     "baths",
@@ -25,7 +25,11 @@
     "city_price_momentum_3m",
     "city_price_momentum_6m",
     "city_price_momentum_12m",
-    "suburb_price_momentum_6m"
+    "suburb_price_momentum_6m",
+    "policy_hlpe_stamp_duty",
+    "policy_homegrown_grant",
+    "policy_homegrown_months",
+    "policy_fed_5pct_no_caps"
   ],
   "categorical_cols": [
     "suburb",
@@ -36,20 +40,20 @@
   "trained_through": "2025-12-31",
   "hyperparameters": {
     "subsample": 1.0,
-    "reg_lambda": 5,
-    "reg_alpha": 0,
+    "reg_lambda": 1.5,
+    "reg_alpha": 1,
     "n_estimators": 400,
-    "min_child_weight": 5,
-    "max_depth": 8,
-    "learning_rate": 0.1,
+    "min_child_weight": 3,
+    "max_depth": 5,
+    "learning_rate": 0.03,
     "gamma": 0,
-    "colsample_bytree": 0.85
+    "colsample_bytree": 0.7
   },
   "policy_events": {
     "hlpe_stamp_duty": "2022-07-01",
     "homegrown_grant": "2024-10-01",
     "fed_5pct_no_caps": "2025-10-01"
   },
-  "pooled_backtest_rmse": 79109.44,
-  "pooled_backtest_mape": 11.83
+  "pooled_backtest_rmse": 79122.65,
+  "pooled_backtest_mape": 11.92
 }

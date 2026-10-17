@@ -1,0 +1,5 @@
+band,pooled range coverage %,per-band range coverage %,n
+low third,77.9,80.1,896.0
+middle third,85.3,81.4,934.0
+high third,86.2,84.0,1110.0
+ALL,83.4,82.0,2940.0
